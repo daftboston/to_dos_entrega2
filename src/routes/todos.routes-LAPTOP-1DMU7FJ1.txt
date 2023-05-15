@@ -1,0 +1,18 @@
+const {Router}= require ('express');
+const {getAllToDos}= require('../controllers/todos.controllers')
+
+const userRoute = require ('./routes/_users.routes')
+
+//obtener todas las actividades
+
+router.get('/activities')
+
+//obtener una actividad x id
+
+//crear una actividad
+
+// actualizar una actividad
+
+//eliminar una actividad
+
+module.exports = router

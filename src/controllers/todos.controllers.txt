@@ -1,0 +1,33 @@
+//importar el modelo de usuarios
+const Todos = require ("../models/todosModels")
+
+
+const getAllToDos= async(req, res)=> {
+    try{
+        const todos = await Todos.findAll();
+        res.json(todos)
+    } catch (error){
+        res.status (400).json(error)
+    }
+}
+
+const postToDo= async(req, res)=> {
+    try{
+        const newToDo= req.body; 
+        await Todos.create(newToDo);
+        res.status(201).send()
+    } catch (error){
+        res.status (400).json(error)
+    }
+}
+
+
+
+
+//exportar los controladores
+
+module.exports = {
+    getAllToDos,
+    postToDo,
+    
+}
